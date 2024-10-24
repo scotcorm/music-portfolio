@@ -78,8 +78,8 @@ i:active {
   position: absolute;
   top: 0;
   left: 0;
-  /* background: url('resources/music-note.svg') no-repeat; */
-  background-size: 50%;
+  background: url('resources/noun-music-7282489.png') no-repeat;
+  background-size: 80%;
   background-position: center;
   transform-origin: 0% 0%;
 }
