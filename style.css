@@ -80,9 +80,9 @@ i:active {
 }
 
 .cover-image {
-  width: 100%;
+  width: 90%;
   height: 366px;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   background: url('resources/noun-music-7282489.png') no-repeat;
@@ -221,12 +221,10 @@ i:active {
   z-index: 10;
   transition: all 0l3s;
   color: #ffa500;
-  /* shouldn't have to specify this color here: figure out why it isn't showing the right color when inactive */
 }
 
 .time {
   color: #ffa500;
-  /* shouldn't have to specify this color here: figure out why it isn't showing the right color when inactive */
 }
 
 .controls #playpause {
@@ -248,8 +246,8 @@ i:active {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+  justify-content: space-around;
+  padding: 20 20px;
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -345,4 +343,17 @@ i:active {
   width: 20px;
 }
 
-/* ================================================================= */
+.track #play {
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.track #play2 {
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+/* .card-title {
+  margin-right: 10px; 
+  margin-top: 10px; 
+} */

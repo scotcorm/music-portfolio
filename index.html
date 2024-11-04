@@ -47,28 +47,10 @@
         responsive: true,
         height: 90,
         barRadius: 4,
-        // src: 'resources/Pick Up - Adam MacDougall.mp3',
-
-        // url: '/audio.mp3',
       });
       wavesurfer.load('resources/Satin Moonrise - Adam MacDougall.mp3');
-      wavesurfer.load('resources/Satin Moonrise - Adam MacDougall.mp3');
-
-      const wavesurfer2 = WaveSurfer.create({
-        container: '#waveform2',
-        waveColor: '#ddd',
-        progressColor: '#ff006c',
-        barWidth: 4,
-        responsive: true,
-        height: 90,
-        barRadius: 4,
-        src: 'resources/Satin Moonrise - Adam MacDougall.mp3',
-
-        // url: '/audio.mp3',
-      });
 
       var play = document.getElementById('play');
-      var play2 = document.getElementById('play2');
 
       // wavesurfer.on('interaction', () => {
       //   wavesurfer.play();
@@ -87,9 +69,30 @@
         play.src = 'resources/play.svg';
         wavesurfer.stop();
       });
+    </script>
+
+    <script type="module">
+      import WaveSurfer from 'https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js';
+
+      const wavesurfer2 = WaveSurfer.create({
+        container: '#waveform2',
+        waveColor: '#ddd',
+        progressColor: '#ff006c',
+        barWidth: 4,
+        responsive: true,
+        height: 90,
+        barRadius: 4,
+      });
+      wavesurfer2.load('resources/Pick Up - Adam MacDougall.mp3');
+
+      var play2 = document.getElementById('play2');
+
+      // wavesurfer.on('interaction', () => {
+      //   wavesurfer.play();
+      // });
 
       play2.onclick = function () {
-        wavesurfer.playPause();
+        wavesurfer2.playPause();
         if (play2.src.includes('play.svg')) {
           play2.src = 'resources/pause.svg';
         } else {
@@ -97,46 +100,16 @@
         }
       };
 
-      wavesurfer.on('finish', function () {
+      wavesurfer2.on('finish', function () {
         play2.src = 'resources/play.svg';
-        wavesurfer.stop();
+        wavesurfer2.stop();
       });
     </script>
 
-    // =========from google
-    doc========================================================== //
-    https://docs.google.com/document/d/1GO0YxLBWdB6-XXJXt90FkJpQ3pG0ir_j23aKCOtoFwM/edit?tab=t.0
-
-    <!-- <script src="https://unpkg.com/wavesurfer.js@7"></script>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0-beta/jquery.min.js"></script>
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.shopify.com/s/files/1/0129/7698/0032/files/mediaelementplayer.css"
-    />
-
-    <script src="//cymatics.fm/cdn/shop/t/9/assets/mediaelement.js"></script> -->
-
-    <!-- <script>
-      let wavesurferObjects = [
-        {
-          container: '#wavesurfer-container0',
-          audioURL:
-            'https://cdn.shopify.com/s/files/1/0678/5803/9069/files/temper_prod.shadow.mp3?v=1717794528',
-          playPauseButton: '#playPause0',
-        },
-      ];
-    </script> -->
-    <div class="waveform">
+    <!-- <div class="waveform">
       <i id="playPause0" class="fas fa-play control_button"> </i>
       <div id="wavesurfer-container0" class="wavesurfer-container"></div>
-    </div>
+    </div> -->
   </head>
 
   <body>
@@ -179,24 +152,6 @@
               alt="logo"
             />
 
-            <!-- <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              aria-hidden="true"
-              class="me-2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
-              />
-              <circle cx="12" cy="13" r="4" />
-            </svg> -->
             <strong>Ethan's Portfolio</strong>
           </a>
           <button
@@ -220,14 +175,15 @@
           <div class="col-lg-6 col-md-8 mx-auto my-auto py-5">
             <h1 class="fw-light">Ethan's Portfolio</h1>
             <p class="lead text-muted">
-              Something short and leading about the collection below -- its
-              contents, technologies, etc. Make it short and sweet, but not too
+              Something short and leading about the collection as a whole -- its
+              contents (including the song list accessible at the top of the
+              player), Featured songs, etc. Make it short and sweet, but not too
               short so folks don't simply skip over it entirely.
             </p>
-            <p>
+            <!-- <p>
               <a href="#" class="btn btn-info my-2">Main call to action</a>
               <a href="#" class="btn btn-warning my-2">Secondary action</a>
-            </p>
+            </p> -->
           </div>
 
           <div class="col-lg-6 col-md-8 mx-auto">
@@ -235,8 +191,9 @@
               <!-- active or inactive -->
               <div class="music-container">
                 <div class="player-top">
-                  <i class="fas fa-bars menu-btn"></i>
-                  <i class="fas fa-search"></i>
+                  <i class="fas fa-bars menu-btn"><h6>Song List</h6></i>
+
+                  <!-- <i class="fas fa-search"></i> -->
                 </div>
 
                 <div class="cover-image"></div>
@@ -284,7 +241,7 @@
                   <!-- <i class="fa-regular fa-heart" id="current-favorite"></i> -->
                   <i class="fas fa-random" id="shuffle"></i>
                   <i class="fas fa-repeat" id="repeat"></i>
-                  <i class="fas fa-gear" id="options"></i>
+                  <!-- <i class="fas fa-gear" id="options"></i> -->
                 </div>
 
                 <p class="current-song-title">song title</p>
@@ -294,10 +251,13 @@
         </div>
       </section>
       <div class="album py-5 bg-light">
+        <div class="col-lg-3 mx-auto my-auto py-5">
+          <h1 class="fw-light">Featured Songs</h1>
+        </div>
         <div class="container">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
             <div class="col">
-              <div class="card border-info shadow-sm">
+              <div class="card border-warning shadow-sm">
                 <div class="music card-header" height="600">
                   <div id="waveform"></div>
                 </div>
@@ -314,33 +274,17 @@
                         alt="play button"
                       />
                     </div>
-                    <div>
-                      <p>Artist: Adam MacDougall</p>
-                      <p>Title: Pick Up</p>
+                    <div class="card-title">
+                      <h5>Artist: Adam MacDougall</h5>
+                      <p>Title: Satin Moonrise</p>
                     </div>
                   </div>
-                  <!-- <div
-                    class="d-flex justify-content-between align-items-center"
-                  > -->
-                  <!-- <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-info">
-                        View Demo
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-warning"
-                      >
-                        Git Repo
-                      </button>
-                    </div> -->
-                  <!-- <small class="text-muted">Bootstrap</small> -->
-                  <!-- </div> -->
                 </div>
               </div>
             </div>
 
             <div class="col">
-              <div class="card border-info shadow-sm">
+              <div class="card border-warning shadow-sm">
                 <div class="music card-header" height="600">
                   <div id="waveform2"></div>
                 </div>
@@ -349,37 +293,32 @@
                   <div
                     class="card-text row row-cols-2 d-flex justify-content-between align-items-left"
                   >
-                    <div class="wavesurfer-container">
-                      <!-- =====================from sheet -->
-                      <audio
-                        id="mediaplayer"
-                        class="mejs__player"
-                        preload="none"
-                        controls
-                      >
-                        <source
-                          src="resources/Pick Up - Adam MacDougall.mp3"
-                          type="audio/mp3"
-                        />
-                      </audio>
-                      <!-- =====================from sheet -->
-
+                    <div class="track">
                       <!-- <i class="fas fa-play" id="play"></i> -->
-                      <!-- <img
+                      <img
                         src="resources/play.svg"
-                        id="play"
+                        id="play2"
                         alt="play button"
-                      /> -->
+                      />
                     </div>
-                    <div>
-                      <p>Artist: Adam MacDougall</p>
+                    <div class="card-title">
+                      <h5>Artist: Adam MacDougall</h5>
                       <p>Title: Pick Up</p>
                     </div>
+                  </div>
+
+                  <div
+                    class="card-text row row-cols-2 d-flex justify-content-between align-items-left"
+                  >
+                    <div class="wavesurfer-container"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col">
+
+            <div class="col-lg-3 mx-auto my-auto py-5"></div>
+
+            <!-- <div class="col">
               <div class="card border-info shadow-sm">
                 <svg
                   class="bd-placeholder-img card-img-top"
@@ -414,8 +353,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
+            </div> -->
+            <!-- <div class="col">
               <div class="card border-info shadow-sm">
                 <svg
                   class="bd-placeholder-img card-img-top"
@@ -450,8 +389,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
+            </div> -->
+            <!-- <div class="col">
               <div class="card border-info shadow-sm">
                 <svg
                   class="bd-placeholder-img card-img-top"
@@ -486,8 +425,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
+            </div> -->
+            <!-- <div class="col">
               <div class="card border-info shadow-sm">
                 <svg
                   class="bd-placeholder-img card-img-top"
@@ -523,7 +462,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
