@@ -338,3 +338,71 @@ function setProgress(e) {
 }
 
 progressBar.addEventListener('click', setProgress);
+
+// =====================================================
+
+let wavesurfers = [];
+// Function to create a WaveSurfer instance for a player
+function createwaveSurfer(containerId, trackUrl, playPauseId) {
+  // Select the play/pause button and WaveSurfer container
+
+  let wavesurfer = WaveSurfer.create({
+    container: container,
+    waveColor: '#FFFFFF',
+    progressColor: '#6191FB',
+    height: '30',
+    cursorWidth: '0',
+    hideScrollbar: 'true',
+    backend: 'MediaElement',
+  });
+  wavesurfers.push(wavesurfer);
+
+  // Load the audio track
+  wavesurfer.load(trackUrl);
+  return wavesurfer;
+}
+
+window.onload = (event) => {
+  console.log('page is fully loaded');
+  wavesurferObjects.map((item, indx) => {
+    let indexToKeep = indx;
+    let waveSurfer = createwaveSurfer(
+      item.container,
+      item.audioURL,
+      item.playPauseButton
+    );
+    let playPause = document.querySelector(item.playPauseButton);
+    // Add click event to play/pause button
+    playPause.addEventListener('click', function (e) {
+      wavesurfers.forEach((wavesfr, index) => {
+        if (index !== indexToKeep && wavesfr.isPlaying()) {
+          wavesfr.stop();
+          wavesfr.seekTo(0);
+          const icons = document.querySelectorAll('.fas');
+
+          icons.forEach((icon) => {
+            if (icon.classList.contains('fa-pause')) {
+              icon.classList.remove('fa-pause');
+              icon.classList.add('fa-play');
+            }
+          });
+        }
+      });
+
+      // Toggle play/pause state and update button icon accordingly
+      waveSurfer.isPlaying()
+        ? (waveSurfer.pause(),
+          playPause.classList.remove('fa-pause'),
+          playPause.classList.add('fa-play'))
+        : (waveSurfer.play(),
+          playPause.classList.remove('fa-play'),
+          playPause.classList.add('fa-pause'));
+    });
+
+    waveSurfer.on('finish', function () {
+      waveSurfer.seekTo(0);
+      playPause.classList.remove('fa-pause');
+      playPause.classList.add('fa-play');
+    });
+  });
+};

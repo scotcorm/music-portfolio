@@ -191,7 +191,7 @@ i:active {
 .info h2 {
   font-size: 16px;
   margin-bottom: 5px;
-  color: rgb(125, 166, 228);
+  color: #ffa500;
   /* shouldn't have to specify this color here: figure out why it isn't showing the right color when inactive */
 }
 
@@ -220,12 +220,12 @@ i:active {
   bottom: 100px;
   z-index: 10;
   transition: all 0l3s;
-  color: rgb(125, 166, 228);
+  color: #ffa500;
   /* shouldn't have to specify this color here: figure out why it isn't showing the right color when inactive */
 }
 
 .time {
-  color: rgb(125, 166, 228);
+  color: #ffa500;
   /* shouldn't have to specify this color here: figure out why it isn't showing the right color when inactive */
 }
 
@@ -314,3 +314,35 @@ i:active {
   justify-content: space-between;
   transition: all 0.3s;
 }
+
+.track {
+  /* width: 90%; */
+  /* max-width: 900px; */
+  /* padding: 30px; */
+  box-shadow: 0 0 20px rgba(red, 0, 0, 0.4);
+  background: #fff;
+  color: #ffa500;
+  border-radius: 8px;
+}
+
+.track .waveform {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.music {
+  margin-right: 30px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.track div {
+  flex: 1;
+}
+
+.track img {
+  width: 20px;
+}
+
+/* ================================================================= */
