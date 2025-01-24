@@ -1,6 +1,13 @@
 # Music Portfolio Site
 ## Built with Bootstrap, and using JS and Wavesurfer for the music.
 
+## About
+This was a portfolio site for my nephew's music, with a few MP3s to serve as placeholders until he sends me his info.  
+I learned more about using Event Listeners, and this was my first effort using wavesurfer, which was pretty great. 
+
+
+# Structure
+
 ```
 resources
   |-corm.png
@@ -17,8 +24,7 @@ style.css
 
 ```
 
-This was a portfolio site for my nephew's music, with a few MP3s to serve as placeholders until he sends me his info.  
-I learned more about using Event Listeners, and this was my first effort using wavesurfer, which was pretty great. 
+
 
 References: 
   1. A wavesurfer video I watched (https://www.youtube.com/watch?v=ftjZI4mLCoI)
