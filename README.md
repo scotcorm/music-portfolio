@@ -1,4 +1,5 @@
-# Music Portfolio Site (deployed at https://scotcorm.github.io/music-portfolio/)
+# Music Portfolio Site 
+## Deployed at https://scotcorm.github.io/music-portfolio/
 ## Built with Bootstrap, and using JS and Wavesurfer for the music.
 
 ## About
